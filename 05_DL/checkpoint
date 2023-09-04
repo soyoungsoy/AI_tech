@@ -1,0 +1,2 @@
+model_checkpoint_path: "lec02_my_weight"
+all_model_checkpoint_paths: "lec02_my_weight"
