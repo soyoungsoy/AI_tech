@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체력인증서</title>
+
+  <!-- 브라우저 위의 아이콘 favicon.ico이 안될때 사용 -->
+  <link rel="icon" href="../static/favicon.png">
+  <!--  png로 강제로 사용시켜줄수도 있음    -->
+
+  <!-- css 초기화 : 모든 브라우저에서 동일하게 나오도록 설정 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+
+  <!-- pretendard 웹폰트 사용 설정 -->
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+
+  <!-- css 연결 -->
+  <link rel="stylesheet" href="../static/css/common.css">
+  <link rel="stylesheet" href="../static/css/home.css">
+
+  <!-- js 연결 -->
+  <script defer src="../static/js/share.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script>
+
+$(document).ready(function () {
+
+    var gen = $("#gen");
+    gen.focus(function(){
+      gen.val('');
+    });
+
+    var age = $("#age");
+    age.focus(function(){
+      age.val('');
+    });
+
+    $("#mylink").click(function () {
+        var age = $('#age').val();
+        if (age == "") {
+            alert("나이를 입력해주세요.");
+            event.preventDefault();
+          return;
+        } else {
+            $("#myform").submit();
+        }
+    });
+});
+</script>
+
+</head>
+
+<body>
+  <h2 class="page-subtitle">국민체력100</h2>
+  <h1 class="page-title">
+    내안에 숨어있는 <br>
+    체력 등급은 어느 정도?
+  </h1>
+  <img src="../static/images/main_ex.PNG" alt="캐릭터" class="character">
+
+
+  <form name="myform" id="myform" method="post" action="/questions">
+    <input class="btn " type="text"  name="gen" id="gen" value="당신의 성별은?">
+    <input class="btn " type="text"  name="age" id="age" value="당신의 나이는?">
+    <a id="mylink" href="#" class="btn btn-orange">체력 심사하러 GO!</a>
+  </form>
+
+
+  <div class="btn btn-green btn-small share-or-copy">
+    주변에 알리기
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="내숨캐" />
+  <meta property="og:title" content="내 안에 숨어있는 직업캐 찾기!" />
+  <meta property="og:description" content="누구나 찰떡인 직업이 있어요! 내 안에 숨어있는 직업캐를 찾아보세요!" />
+  <meta property="og:image" content="../static/images/thumbnail.jpg" />
+  <meta property="og:url" content="https://prismatic-monstera-4c9d6a.netlify.app/" />
+
+  <!-- Twitter Cards -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="내숨캐" />
+  <meta property="twitter:title" content="내 안에 숨어있는 직업캐 찾기!" />
+  <meta property="twitter:description" content="누구나 찰떡인 직업이 있어요! 내 안에 숨어있는 직업캐를 찾아보세요!" />
+  <meta property="twitter:image" content="../static/images/thumbnail.jpg" />
+  <meta property="twitter:url" content="https://prismatic-monstera-4c9d6a.netlify.app/" />
+
+  <title>내 안에 숨어있는 직업캐 찾기!</title>
+
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+  <link rel="stylesheet" href="../static/css/common.css">
+  <link rel="stylesheet" href="../static/css/results.css">
+  <script defer src="../static/js/share.js"></script>
+  <!--<script type="module" defer src="../static/js/results.js"></script>-->
+</head>
+<body>
+  <h2 class="page-subtitle">
+    내 본캐는?!
+  </h2>
+  <h1 class="page-title"></h1>
+ <img src="" alt="캐릭터" class="character">
+  <div class="result">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <div class="result">
+    <h3>이런 내가 직업을 갖는다면?</h3>
+    <div class="jobs">
+      <div class="job"></div>
+      <div class="job"></div>
+    </div>
+  </div>
+  <br>
+  <div class="btn btn-green btn-small share-or-copy">
+    결과 공유하기
+  </div>
+  <a href="./" class="btn btn-gray btn-small">
+    다시 테스트하기
+  </a>
+</body>
+
+
+
+<script>
+const results = {{MY_RESULT}}
+/*
+[
+  {
+    title: '출근 시간은<br>내가 정해!',
+    character: '/static/images/result_character1.png',
+    results: [
+      '혼자서 멘탈 케어가 가능해요!<br>소속이 없어도, 벌이가 불안정해도 저는 지금이 좋아요!',
+      '일에 대한 욕심이 많아요.<br>행복한 야근이라고 할 수 있어요!',
+      '자유로운 환경에서 더 잘해요!<br>하지만 누구보다 스스로 시간 관리가 철저해요:)',
+      '리더십 있다는 소리를 자주 들어요.<br>추진력이 있는 편이죠~ (뿌듯)'
+    ],
+    jobs: ['프리랜서', '창업가'],
+    lectureImg: '/static/images/result_lecture1.png'
+  },
+  {
+    title: '프로직진러!<br>진행력 갑',
+    character: '/static/images/result_character2.png',
+    results: [
+      '나는야 회사 사람들 멘탈 지킴이!<br>언제나 토닥토닥 으샤으샤 응원하며 다니는 파워 인싸!',
+      '여러 사람과 협업이 필요한 직무에 찰떡!',
+      '진행력 갑! 추진력 갑!<br>빠른 속도로 동시에 여러 업무를 해결할 수 있어요.',
+      '회사 행사나 크리스마스 이벤트,<br>회사사람들 생일까지 우리가 다 챙길게요'
+    ],
+    jobs: ['마케터', '기획자'],
+    lectureImg: '/static/images/result_lecture2.png'
+  }
+]
+*/
+
+
+
+const mbtis = {
+  aaa: 0,
+  bbb: 1
+}
+
+
+// -------------------------------------------------------------------
+const my_answer = "{{ MY_ANSWER }}"
+const result = results[mbtis[my_answer]]
+// ---------------------------------------------------------------------
+
+// 결과를 출력할 각 요소를 찾아요!
+const titleEl = document.querySelector('.page-title')
+const characterEl = document.querySelector('.character')
+const boxEls = document.querySelectorAll('.box')
+const jobEls = document.querySelectorAll('.job')
+
+// 각 요소에 내용을 채워넣어요!
+titleEl.innerHTML = result.title
+characterEl.src = result.character
+boxEls.forEach(function (boxEl, index) {
+  boxEl.innerHTML = result.results[index]
+})
+jobEls.forEach(function (jobEl, index) {
+  jobEl.innerHTML = result.jobs[index]
+})
+
+</script>
+
+
+
+
+</html>
