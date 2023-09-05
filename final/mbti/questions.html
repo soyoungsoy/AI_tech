@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체력인증서</title>
+
+  <!-- 브라우저 위의 아이콘 favicon.ico이 안될때 사용 -->
+  <link rel="icon" href="./favicon.png">
+  <!--  png로 강제로 사용시켜줄수도 있음    -->
+
+  <!-- css 초기화 : 모든 브라우저에서 동일하게 나오도록 설정 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+
+  <!-- pretendard 웹폰트 사용 설정 -->
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+
+  <!-- css 연결 -->
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/questions.css">
+
+  <!-- js 연결 -->
+  <!-- import를 사용하려면 type ='module'을 추가해야함 -->
+  <script type="module" defer src="./js/questions.js"></script>
+</head>
+
+<body>
+  <div class="progress">
+    <div class="value"></div>
+  </div>
+  <div class="question-box">
+    <div class="number"></div>
+    <div class="question"></div>
+    <div class="btn btn-gray choice choice1"></div>
+    <div class="btn btn-gray choice choice2"></div>
+  
+  </div>  
+
+</body>
+
+</html>
